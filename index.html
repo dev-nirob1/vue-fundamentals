@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>{{message}}</h1>
+      <!-- use {{}} for dynamic value  -->
+      <p>LuckyNumber: {{luckyNumber}}</p>
+      <p>RandomLuckyNumber: {{getRandomLuckyNumber()}}</p>
+      <p>NumbersArray: {{numbers}}</p>
+      <p>Employee Data: {{employee}}</p>
+      <p>Random Number: {{getRandomNumber()}}</p>
+    </div>
+  </body>
+
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      setup() {
+        const message = "hello world";
+        let luckyNumber = 7;
+        const numbers = [2, 5, 56, 43, 3];
+        const employee = {
+            name: 'Nirob',
+            age: '23',
+            profession: 'Web dev'
+        }
+
+        const getRandomNumber = ()=> {
+            return Math.floor(Math.random()*10)+ 1;
+        }
+
+        const getRandomLuckyNumber = ()=> {
+            luckyNumber = Math.floor(Math.random()*10)+ 1;
+            console.log('lucky Number', luckyNumber);
+            return Math.floor(Math.random()*10 + 1)
+        }
+        return {
+            message,getRandomLuckyNumber,
+            luckyNumber,
+            numbers,
+            employee,
+            getRandomNumber
+        };
+      },
+    }).mount("#app");
+  </script>
+</html>
