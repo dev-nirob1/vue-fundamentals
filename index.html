@@ -11,42 +11,50 @@
     <div id="app">
       <h1>{{message}}</h1>
       <!-- use {{}} for dynamic value  -->
-      <p>LuckyNumber: {{luckyNumber}}</p>
-      <p>RandomLuckyNumber: {{getRandomLuckyNumber()}}</p>
+       <p>LuckyNumber {{luckyNumber}}</p>
+      <p>LuckyNumber: {{updateRandomNumber()}}</p>
       <p>NumbersArray: {{numbers}}</p>
-      <p>Employee Data: {{employee}}</p>
-      <p>Random Number: {{getRandomNumber()}}</p>
+      <p>Employee Data: {{employee.age}}</p>
+      <p>Random Number: {{getRandomNumber}}</p>
     </div>
   </body>
 
   <script>
-    const { createApp } = Vue;
+    const { createApp, ref } = Vue;
     createApp({
       setup() {
-        const message = "hello world";
-        let luckyNumber = 7;
+        const message = ref("hello world");
+        let luckyNumber = ref(5);
+
         const numbers = [2, 5, 56, 43, 3];
-        const employee = {
+        const employee = ref({
             name: 'Nirob',
             age: '23',
             profession: 'Web dev'
+        })
+
+        const updateRandomNumber = ()=> {
+           setTimeout(() => {
+            luckyNumber.value = 6;
+            employee.value.age = 30
+           }, 1000);
         }
 
-        const getRandomNumber = ()=> {
-            return Math.floor(Math.random()*10)+ 1;
-        }
+        // const getEmployeeAge = ()=
+        // const getRandomLuckyNumber = ()=> {
+        //     luckyNumber = Math.floor(Math.random()*10)+ 1;
+        //     console.log('lucky Number', luckyNumber);
+        //     return Math.floor(Math.random()*10 + 1)
+        // }
 
-        const getRandomLuckyNumber = ()=> {
-            luckyNumber = Math.floor(Math.random()*10)+ 1;
-            console.log('lucky Number', luckyNumber);
-            return Math.floor(Math.random()*10 + 1)
-        }
+
         return {
-            message,getRandomLuckyNumber,
+            message,
+            // getRandomLuckyNumber,
             luckyNumber,
             numbers,
             employee,
-            getRandomNumber
+            updateRandomNumber
         };
       },
     }).mount("#app");
