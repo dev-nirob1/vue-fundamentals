@@ -48,3 +48,6 @@ function increase() {
 </template>
 ```
 Here, count starts at 0 and increase by one every time the button is clicked. In Javascript(logic), you need to update it with .value, but in template(HTML), you just use {{count}}.
+
+# 𝚠̲𝚑̲𝚊̲𝚝̲ ̲𝚒̲𝚜̲ ̲𝚁̲𝚎̲active𝚏(̲)̲:̲
+ Reactive is the basic/default way in vue to make objects and arrays reactive. It tracks mutation so the DOM updates automatically when value changes. It has few limitation that it doesn't work on premitive value like (Number, String, Booleans). For those you need to use ref().

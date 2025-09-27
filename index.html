@@ -14,7 +14,9 @@
        <p>LuckyNumber {{luckyNumber}}</p>
       <p>LuckyNumber: {{updateRandomNumber()}}</p>
       <p>NumbersArray: {{numbers}}</p>
+      <p>Employee Data: {{employee.name}}</p>
       <p>Employee Data: {{employee.age}}</p>
+      <p>Employee Data: {{employee.profession}}</p>
       <p>Random Number: {{getRandomNumber}}</p>
     </div>
   </body>
@@ -36,7 +38,9 @@
         const updateRandomNumber = ()=> {
            setTimeout(() => {
             luckyNumber.value = 6;
-            employee.value.age = 30
+            employee.value.age = 30;
+            employee.value.name = 'Al Hasan Nirob';
+            employee.value.profession = 'React Developer';
            }, 1000);
         }
 
