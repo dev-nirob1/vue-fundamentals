@@ -49,5 +49,10 @@ function increase() {
 ```
 Here, count starts at 0 and increase by one every time the button is clicked. In Javascript(logic), you need to update it with .value, but in template(HTML), you just use {{count}}.
 
-# 𝚠̲𝚑̲𝚊̲𝚝̲ ̲𝚒̲𝚜̲ ̲𝚁̲𝚎̲active𝚏(̲)̲:̲
+# 𝚠̲𝚑̲𝚊̲𝚝̲ ̲𝚒̲𝚜̲ ̲𝚁̲𝚎̲active(̲)̲:̲
  Reactive is the basic/default way in vue to make objects and arrays reactive. It tracks mutation so the DOM updates automatically when value changes. It has few limitation that it doesn't work on premitive value like (Number, String, Booleans). For those you need to use ref().
+
+ # 𝚠̲𝚑̲𝚊̲𝚝̲ ̲𝚒̲𝚜̲ ̲Vue Directives:̲
+ Directive applies special reactive behaviors to the DOM and they are basically like HTML attributes which are added inside the HTML template. All directives start with v- (e.g., v-if, v-for) to indecate they are special vue attributes. They help vue reactively update the DOM based on data changes.
+
+ - Vue Directives: Special attributes starting with v- that apply reactive behaviors to the DOM.
